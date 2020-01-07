@@ -1,4 +1,4 @@
-package jvm.²âÊÔÀà¼ÓÔØÈ«¹ı³Ì;
+package jvm.æµ‹è¯•ç±»åŠ è½½å…¨è¿‡ç¨‹;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * ×Ô¶¨ÒåÎÄ¼şÏµÍ³Àà¼ÓÔØÆ÷
- * @author ÉĞÑ§ÌÃ¸ßä¿ www.sxt.cn
+ * è‡ªå®šä¹‰æ–‡ä»¶ç³»ç»Ÿç±»åŠ è½½å™¨
+ * @author å°šå­¦å ‚é«˜æ·‡ www.sxt.cn
  *
  */
 public class FileSystemClassLoader extends ClassLoader {
@@ -24,13 +24,13 @@ public class FileSystemClassLoader extends ClassLoader {
 		
 		Class<?> c = findLoadedClass(name);
 		
-		//Ó¦¸ÃÒªÏÈ²éÑ¯ÓĞÃ»ÓĞ¼ÓÔØ¹ıÕâ¸öÀà¡£Èç¹ûÒÑ¾­¼ÓÔØ£¬ÔòÖ±½Ó·µ»Ø¼ÓÔØºÃµÄÀà¡£Èç¹ûÃ»ÓĞ£¬Ôò¼ÓÔØĞÂµÄÀà¡£
+		//åº”è¯¥è¦å…ˆæŸ¥è¯¢æœ‰æ²¡æœ‰åŠ è½½è¿‡è¿™ä¸ªç±»ã€‚å¦‚æœå·²ç»åŠ è½½ï¼Œåˆ™ç›´æ¥è¿”å›åŠ è½½å¥½çš„ç±»ã€‚å¦‚æœæ²¡æœ‰ï¼Œåˆ™åŠ è½½æ–°çš„ç±»ã€‚
 		if(c!=null){
 			return c;
 		}else{
 			ClassLoader parent = this.getParent();
 			try {
-				c = parent.loadClass(name);	   //Î¯ÅÉ¸ø¸¸Àà¼ÓÔØ
+				c = parent.loadClass(name);	   //å§”æ´¾ç»™çˆ¶ç±»åŠ è½½
 			} catch (Exception e) {
 //				e.printStackTrace();
 			}
@@ -55,7 +55,7 @@ public class FileSystemClassLoader extends ClassLoader {
 	private byte[] getClassData(String classname){   //com.bjsxt.test.User   d:/myjava/  com/bjsxt/test/User.class
 		String path = rootDir +"/"+ classname.replace('.', '/')+".class";
 		
-//		IOUtils,¿ÉÒÔÊ¹ÓÃËü½«Á÷ÖĞµÄÊı¾İ×ª³É×Ö½ÚÊı×é
+//		IOUtils,å¯ä»¥ä½¿ç”¨å®ƒå°†æµä¸­çš„æ•°æ®è½¬æˆå­—èŠ‚æ•°ç»„
 		InputStream is = null;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try{

@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * �����ļ�ϵͳ�м��ܺ��class�ֽ�����������
- * @author ��ѧ�ø�� www.sxt.cn
+ * 加载文件系统中加密后的class字节码的类加载器
+ * @author 尚学堂高淇 www.sxt.cn
  *
  */
 public class DecrptClassLoader  extends ClassLoader {
@@ -24,13 +24,13 @@ public class DecrptClassLoader  extends ClassLoader {
 		
 		Class<?> c = findLoadedClass(name);
 		
-		//Ӧ��Ҫ�Ȳ�ѯ��û�м��ع�����ࡣ����Ѿ����أ���ֱ�ӷ��ؼ��غõ��ࡣ���û�У�������µ��ࡣ
+		//应该要先查询有没有加载过这个类。如果已经加载，则直接返回加载好的类。如果没有，则加载新的类。
 		if(c!=null){
 			return c;
 		}else{
 			ClassLoader parent = this.getParent();
 			try {
-				c = parent.loadClass(name);	   //ί�ɸ��������
+				c = parent.loadClass(name);	   //委派给父类加载
 			} catch (Exception e) {
 //				e.printStackTrace();
 			}
@@ -55,7 +55,7 @@ public class DecrptClassLoader  extends ClassLoader {
 	private byte[] getClassData(String classname){   //com.bjsxt.test.User   d:/myjava/  com/bjsxt/test/User.class
 		String path = rootDir +"/"+ classname.replace('.', '/')+".class";
 		
-//		IOUtils,����ʹ���������е�����ת���ֽ�����
+//		IOUtils,可以使用它将流中的数据转成字节数组
 		InputStream is = null;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try{
@@ -65,7 +65,7 @@ public class DecrptClassLoader  extends ClassLoader {
 			
 			int temp = -1;
 			while((temp=is.read())!=-1){
-				baos.write(temp^0xff);  //ȡ������,�൱�ڽ���
+				baos.write(temp^0xff);  //取反操作,相当于解密
 			}
 			
 			return baos.toByteArray();

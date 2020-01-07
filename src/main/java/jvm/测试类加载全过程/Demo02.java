@@ -1,8 +1,8 @@
 package jvm.测试类加载全过程;
 
 /**
- * ������������Ĳ�νṹ��˫��ί�л���
- * @author ��ѧ�ø��  www.sxt.cn
+ * 测试类加载器的层次结构、双亲委托机制
+ * @author 尚学堂高淇  www.sxt.cn
  *
  */
 public class Demo02 {

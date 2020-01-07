@@ -1,4 +1,4 @@
-package com.bjsxt.test.bean;
+package jvm.TestReflection.bean;
 
 public class User {
 	
@@ -27,7 +27,7 @@ public class User {
 	}
 	
 	public void setUname() {
-		this.uname = "高淇";
+		this.uname = "楂樻穱";
 	}
 	
 	public User(int id, int age, String uname) {
@@ -37,7 +37,7 @@ public class User {
 		this.uname = uname;
 	}
 	
-	//javabean必须要有无参的构造方法！
+	//javabean蹇呴』瑕佹湁鏃犲弬鐨勬瀯閫犳柟娉曪紒
 	public User() {
 	}
 }

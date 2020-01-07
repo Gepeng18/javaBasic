@@ -13,13 +13,13 @@ import javassist.Modifier;
 import javassist.NotFoundException;
 
 /**
- * ����javassist��API
- * @author ��ѧ�ø�� www.sxt.cn
+ * 测试javassist的API
+ * @author 尚学堂高淇 www.sxt.cn
  *
  */
 public class Demo02 {
 	/**
-	 * ������Ļ����÷�
+	 * 处理类的基本用法
 	 * @throws Exception 
 	 */
 	public static void test01() throws Exception{
@@ -29,15 +29,15 @@ public class Demo02 {
 		byte[] bytes = cc.toBytecode();
 		System.out.println(Arrays.toString(bytes));
 		
-		System.out.println(cc.getName()); //��ȡ����
-		System.out.println(cc.getSimpleName()); //��ȡ��Ҫ����
-		System.out.println(cc.getSuperclass()); //��ø���
-		System.out.println(cc.getInterfaces()); //��ýӿ�
+		System.out.println(cc.getName()); //获取类名
+		System.out.println(cc.getSimpleName()); //获取简要类名
+		System.out.println(cc.getSuperclass()); //获得父类
+		System.out.println(cc.getInterfaces()); //获得接口
 		
 	}
 	
 	/**
-	 * ���Բ����µķ���
+	 * 测试产生新的方法
 	 * @throws Exception 
 	 */
 	public static void test02() throws Exception{
@@ -53,16 +53,16 @@ public class Demo02 {
 		
 		cc.addMethod(m);
 		
-		//ͨ��������������ɵķ���
+		//通过反射调用新生成的方法
 		Class clazz = cc.toClass();
-		Object obj = clazz.newInstance();  //ͨ������Emp�޲ι������������µ�Emp����
+		Object obj = clazz.newInstance();  //通过调用Emp无参构造器，创建新的Emp对象
 		Method method = clazz.getDeclaredMethod("add", int.class,int.class);
 		Object result = method.invoke(obj, 200,300);
 		System.out.println(result);
 	}
 	
 	/**
-	 * �޸����еķ�������Ϣ���޸ķ����������
+	 * 修改已有的方法的信息，修改方法体的内容
 	 * @throws Exception
 	 */
 	public static void test03() throws Exception{
@@ -74,15 +74,15 @@ public class Demo02 {
 		cm.insertAt(9, "int b=3;System.out.println(\"b=\"+b);");
 		cm.insertAfter("System.out.println(\"end!!!\");");
 		
-		//ͨ��������������ɵķ���
+		//通过反射调用新生成的方法
 		Class clazz = cc.toClass();
-		Object obj = clazz.newInstance();  //ͨ������Emp�޲ι������������µ�Emp����
+		Object obj = clazz.newInstance();  //通过调用Emp无参构造器，创建新的Emp对象
 		Method method = clazz.getDeclaredMethod("sayHello", int.class);
 		method.invoke(obj, 300);
 	}
 
 	/**
-	 * ���ԵĲ���
+	 * 属性的操作
 	 * @throws Exception
 	 */
 	public static void test04() throws Exception{
@@ -94,16 +94,16 @@ public class Demo02 {
 		f1.setModifiers(Modifier.PRIVATE);
 		cc.addField(f1);
 		
-//		cc.getDeclaredField("ename");   //��ȡָ��������
+//		cc.getDeclaredField("ename");   //获取指定的属性
 		
-		//������Ӧ��set��get����
+		//增加相应的set和get方法
 		cc.addMethod(CtNewMethod.getter("getSalary", f1));;
 		cc.addMethod(CtNewMethod.getter("setSalary", f1));;
 		
 	}
 	
 	/**
-	 * ���췽���Ĳ���
+	 * 构造方法的操作
 	 * @throws Exception
 	 */
 	public static void test05() throws Exception {

@@ -13,6 +13,6 @@ public @interface SxtAnnotation01 {
 	int age() default 0;
 	int id() default -1;   //String indexOf("abc")  -1
 	
-	String[] schools() default {"�廪��ѧ","������ѧ��"};
+	String[] schools() default {"清华大学","北京上学堂"};
 	
 }

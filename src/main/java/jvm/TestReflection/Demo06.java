@@ -2,13 +2,13 @@ package jvm.TestReflection;
 
 import java.lang.reflect.Method;
 
-import com.bjsxt.test.bean.User;
+import jvm.TestReflection.bean.User;
 
 /**
- * ͨ��������ȫ��飬��߷���Ч��
- * ����ִ�з�����Ч�ʲ���Ƚ�
+ * 通过跳过安全检查，提高反射效率
+ * 三种执行方法的效率差异比较
  * 
- * @author ��ѧ�ø�� www.sxt.cn
+ * @author 尚学堂高淇 www.sxt.cn
  *
  */
 public class Demo06 {
@@ -23,7 +23,7 @@ public class Demo06 {
 		}
 		
 		long endTime = System.currentTimeMillis();
-		System.out.println("��ͨ�������ã�ִ��10�ڴΣ���ʱ��"+(endTime-startTime)+"ms"); 
+		System.out.println("普通方法调用，执行10亿次，耗时："+(endTime-startTime)+"ms"); 
 	}
 	
 	public static void test02() throws Exception{
@@ -39,14 +39,14 @@ public class Demo06 {
 		}
 		
 		long endTime = System.currentTimeMillis();
-		System.out.println("���䶯̬�������ã�ִ��10�ڴΣ���ʱ��"+(endTime-startTime)+"ms");
+		System.out.println("反射动态方法调用，执行10亿次，耗时："+(endTime-startTime)+"ms");
 	}
 	
 	public static void test03() throws Exception{
 		User u = new User();
 		Class clazz = u.getClass();
 		Method m = clazz.getDeclaredMethod("getUname", null);
-		m.setAccessible(true);	//����Ҫִ�з��ʰ�ȫ���
+		m.setAccessible(true);	//不需要执行访问安全检查
 		
 		long startTime = System.currentTimeMillis();
 		
@@ -55,7 +55,7 @@ public class Demo06 {
 		}
 		
 		long endTime = System.currentTimeMillis();
-		System.out.println("���䶯̬�������ã�������ȫ��飬ִ��10�ڴΣ���ʱ��"+(endTime-startTime)+"ms");
+		System.out.println("反射动态方法调用，跳过安全检查，执行10亿次，耗时："+(endTime-startTime)+"ms");
 	}
 	
 	

@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * ²âÊÔÄÚÖÃ×¢½âÓÃ·¨
- * @author ÉĞÑ§ÌÃ¸ßä¿
+ * æµ‹è¯•å†…ç½®æ³¨è§£ç”¨æ³•
+ * @author å°šå­¦å ‚é«˜æ·‡
  *
  */
 @SuppressWarnings("all")

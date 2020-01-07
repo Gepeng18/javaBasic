@@ -1,8 +1,8 @@
 package jvm.TestReflection;
 
 /**
- * ���Ը�������(class,interface,enum,annotation,primitive type,void)��Ӧ��java.lang.Class����Ļ�ȡ��ʽ
- * @author ��ѧ�ø��    www.sxt.cn
+ * 测试各种类型(class,interface,enum,annotation,primitive type,void)对应的java.lang.Class对象的获取方式
+ * @author 尚学堂高淇    www.sxt.cn
  *
  */
 @SuppressWarnings("all")
@@ -14,11 +14,11 @@ public class Demo01 {
 		try {
 			
 			Class clazz = Class.forName(path);
-			//�����Ǳ�ʾ���װһЩ���ݡ�  һ���౻���غ�JVM�ᴴ��һ����Ӧ�����Class������������ṹ��Ϣ��ŵ���Ӧ��Class�����С�
-			//���Class�������һ�澵��һ����ͨ�����澵���ҿ��Կ�����Ӧ���ȫ����Ϣ��
+			//对象是表示或封装一些数据。  一个类被加载后，JVM会创建一个对应该类的Class对象，类的整个结构信息会放到对应的Class对象中。
+			//这个Class对象就像一面镜子一样，通过这面镜子我可以看到对应类的全部信息。
 			System.out.println(clazz.hashCode());
 			
-			Class clazz2 = Class.forName(path);	//һ����ֻ��Ӧһ��Class����
+			Class clazz2 = Class.forName(path);	//一个类只对应一个Class对象
 			System.out.println(clazz2.hashCode());
 			
 			Class strClazz = String.class;

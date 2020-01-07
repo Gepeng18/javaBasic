@@ -5,8 +5,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Ӧ�÷����API����ȡ�����Ϣ(������֡����ԡ���������������)
- * @author ��ѧ�ø��  www.sxt.cn
+ * 应用反射的API，获取类的信息(类的名字、属性、方法、构造器等)
+ * @author 尚学堂高淇  www.sxt.cn
  *
  */
 public class Demo02 {
@@ -16,33 +16,33 @@ public class Demo02 {
 		try {
 			Class clazz = Class.forName(path);
 			
-			//��ȡ�������
-			System.out.println(clazz.getName());//��ð���+������com.bjsxt.test.bean.User
-			System.out.println(clazz.getSimpleName());	//���������User
+			//获取类的名字
+			System.out.println(clazz.getName());//获得包名+类名：com.bjsxt.test.bean.User
+			System.out.println(clazz.getSimpleName());	//获的类名：User
 			
-			//��ȡ������Ϣ
-//			Field[] fields = clazz.getFields(); //ֻ�ܻ��public��field
-			Field[] fields = clazz.getDeclaredFields();//������е�field
+			//获取属性信息
+//			Field[] fields = clazz.getFields(); //只能获得public的field
+			Field[] fields = clazz.getDeclaredFields();//获得所有的field
 			Field f = clazz.getDeclaredField("uname");
 			System.out.println(fields.length);
 			for(Field temp:fields){
-				System.out.println("���ԣ�"+temp);
+				System.out.println("属性："+temp);
 			}
-			//��ȡ������Ϣ
+			//获取方法信息
 			Method[] methods = clazz.getDeclaredMethods();
 			Method m01 = clazz.getDeclaredMethod("getUname", null);
-			//��������вΣ�����봫�ݲ������Ͷ�Ӧ��class����
+			//如果方法有参，则必须传递参数类型对应的class对象
 			Method m02 = clazz.getDeclaredMethod("setUname", String.class); 
 			for(Method m:methods){
-				System.out.println("������"+m);
+				System.out.println("方法："+m);
 			}
 			
-			//��ù�������Ϣ
+			//获得构造器信息
 			Constructor[] constructors = clazz.getDeclaredConstructors();
 			Constructor c = clazz.getDeclaredConstructor(int.class,int.class,String.class);
-			System.out.println("��ù�������"+c);
+			System.out.println("获得构造器："+c);
 			for(Constructor temp:constructors){
-				System.out.println("��������"+temp);
+				System.out.println("构造器："+temp);
 			}
 			
 			

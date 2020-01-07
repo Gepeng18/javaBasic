@@ -9,37 +9,37 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 /**
- * ���Խű�����ִ��javascript����
- * @author ��ѧ�ø�� www.sxt.cn
+ * 测试脚本引擎执行javascript代码
+ * @author 尚学堂高淇 www.sxt.cn
  *
  */
 public class Demo01 {
 	public static void main(String[] args) throws Exception {
-		//��ýű��������
+		//获得脚本引擎对象
 		ScriptEngineManager sem = new ScriptEngineManager();
 		ScriptEngine engine = sem.getEngineByName("javascript");
 		
-		//�������,�洢��������������
+		//定义变量,存储到引擎上下文中
 		engine.put("msg", "gaoqi is a good man!");
-		String str = "var user = {name:'gaoqi',age:18,schools:['�廪��ѧ','������ѧ��']};";
+		String str = "var user = {name:'gaoqi',age:18,schools:['清华大学','北京尚学堂']};";
 		str += "println(user.name);";
 		
-		//ִ�нű�
+		//执行脚本
 		engine.eval(str);
 		engine.eval("msg = 'sxt is a good school';");
 		System.out.println(engine.get("msg"));
 		System.out.println("###########################");
 		
-		//���庯��
+		//定义函数
 		engine.eval("function add(a,b){var sum = a + b; return sum;}");
-		//ȡ�õ��ýӿ�
+		//取得调用接口
 		Invocable jsInvoke = (Invocable) engine;
-		//ִ�нű��ж���ķ���
+		//执行脚本中定义的方法
 		Object result1 = jsInvoke.invokeFunction("add", new Object[]{13,20});
 		System.out.println(result1);
 		
-		//��������java����ʹ���������е�java��.����Ҫ�����˽�ϸ�ڣ�������ϸѧϰRhino���﷨
-		String jsCode = "importPackage(java.util); var list=Arrays.asList([\"������ѧ��\",\"�廪��ѧ\",\"������ѧ\"]);";
+		//导入其他java包，使用其他包中的java类.若需要深入了解细节，可以详细学习Rhino的语法
+		String jsCode = "importPackage(java.util); var list=Arrays.asList([\"北京尚学堂\",\"清华大学\",\"北京大学\"]);";
 		engine.eval(jsCode);
 		
 		List<String> list2 = (List<String>)engine.get("list");
@@ -47,11 +47,11 @@ public class Demo01 {
 			System.out.println(temp);
 		}
 		
-		//ִ��һ��js�ļ�(���ǽ�a.js������Ŀ��src�¼���)
+		//执行一个js文件(我们将a.js至于项目的src下即可)
 		URL url = Demo01.class.getClassLoader().getResource("a.js");
 		FileReader fr = new FileReader(url.getPath());
 		engine.eval(fr);
-		fr.close();   //����ֻ�ǲ��ԣ��Ͳ���ô�淶�ˡ����ʵ����ʱҪʹ��try catch finally��
+		fr.close();   //由于只是测试，就不那么规范了。大家实际用时要使用try catch finally！
 		
 	}
 }

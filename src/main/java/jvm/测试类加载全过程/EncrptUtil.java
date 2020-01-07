@@ -1,4 +1,4 @@
-package jvm.²âÊÔÀà¼ÓÔØÈ«¹ı³Ì;
+package jvm.æµ‹è¯•ç±»åŠ è½½å…¨è¿‡ç¨‹;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,8 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * ¼ÓÃÜ¹¤¾ßÀà
- * @author ÉĞÑ§ÌÃ¸ßä¿ www.sxt.cn
+ * åŠ å¯†å·¥å…·ç±»
+ * @author å°šå­¦å ‚é«˜æ·‡ www.sxt.cn
  *
  */
 public class EncrptUtil {
@@ -27,7 +27,7 @@ public class EncrptUtil {
 			
 			int temp = -1;
 			while((temp=fis.read())!=-1){
-				fos.write(temp^0xff);  //È¡·´²Ù×÷
+				fos.write(temp^0xff);  //å–åæ“ä½œ
 			}
 			
 		} catch (Exception e) {
