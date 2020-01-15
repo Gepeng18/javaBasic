@@ -1,4 +1,4 @@
-package jvm.测试类加载全过程;
+package jvm.classloader;
 
 /**
  * 测试简单加密解密(取反)操作

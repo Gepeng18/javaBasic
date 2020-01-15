@@ -1,4 +1,4 @@
-package com.sxt.others;
+package thread.Thread_study04.others;
 /**
  * 指令重排: 代码执行顺序与预期不一致
  * 目的:提高性能

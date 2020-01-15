@@ -1,4 +1,4 @@
-package jvm.测试类加载全过程;
+package jvm.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;

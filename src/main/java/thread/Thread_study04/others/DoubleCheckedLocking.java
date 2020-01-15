@@ -1,4 +1,4 @@
-package com.sxt.others;
+package thread.Thread_study04.others;
 /**
  * DCL单例模式: 懒汉式套路基础上加入并发控制，保证在多线程环境下，对外存在一个对象
  * 1、构造器私有化 -->避免外部new构造器

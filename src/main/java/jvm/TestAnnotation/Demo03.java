@@ -12,13 +12,14 @@ public class Demo03 {
 	
 	public static void main(String[] args) {
 		try {
-			Class clazz = Class.forName("com.bjsxt.test.annotation.SxtStudent");
+			Class clazz = Class.forName("jvm.TestAnnotation.SxtStudent");
 			
 			//获得类的所有有效注解
 			Annotation[] annotations=clazz.getAnnotations();
 			for (Annotation a : annotations) {
 				System.out.println(a);
 			}
+			System.out.println();
 			//获得类的指定的注解
 			SxtTable st = (SxtTable) clazz.getAnnotation(SxtTable.class);
 			System.out.println(st.value());

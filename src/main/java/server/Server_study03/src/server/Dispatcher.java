@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.net.Socket;
 /**
  * 分发器：加入状态内容处理  404 505 及首页
- * 
+ *
  * @author 裴新 QQ:3401997271
  *
  */
@@ -26,12 +26,12 @@ public class Dispatcher implements Runnable {
 		}
 	}
 	@Override
-	public void run() {	
-		
+	public void run() {
+
 		try {
 			if(null== request.getUrl() || request.getUrl().equals("")) {
 				InputStream is =Thread.currentThread().getContextClassLoader().getResourceAsStream("index.html");
-				response.print((new String(is.readAllBytes())));
+//				response.print((new String(is.readAllBytes())));
 				response.pushToBrowser(200);
 				is.close();
 				return ;
@@ -44,10 +44,10 @@ public class Dispatcher implements Runnable {
 			}else {
 				//错误....
 				InputStream is =Thread.currentThread().getContextClassLoader().getResourceAsStream("error.html");
-				response.print((new String(is.readAllBytes())));
+//				response.print((new String(is.readAllBytes())));
 				response.pushToBrowser(404);
 				is.close();
-			}		
+			}
 		}catch(Exception e) {
 			try {
 				response.println("你好我不好，我会马上好");
@@ -55,7 +55,7 @@ public class Dispatcher implements Runnable {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-		}		
+		}
 		release();
 	}
 	//释放资源

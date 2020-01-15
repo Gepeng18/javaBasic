@@ -15,7 +15,7 @@
  * 
  */
  
-package com.sxt.others;
+package thread.Thread_study04.others;
 import java.util.Date;
 
 import org.slf4j.Logger;

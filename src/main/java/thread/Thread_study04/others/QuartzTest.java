@@ -1,4 +1,4 @@
-package com.sxt.others;
+package thread.Thread_study04.others;
 
 import static org.quartz.DateBuilder.evenSecondDateAfterNow;
 import static org.quartz.JobBuilder.newJob;

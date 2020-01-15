@@ -1,4 +1,4 @@
-package jvm.测试类加载全过程;
+package jvm.classloader;
 
 public class Demo01 {
 	static{

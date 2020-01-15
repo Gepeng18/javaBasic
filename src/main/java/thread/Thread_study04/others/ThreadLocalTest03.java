@@ -1,4 +1,4 @@
-package com.sxt.others;
+package thread.Thread_study04.others;
 /**
  * ThreadLocal:分析上下文 环境  起点
  * 1、构造器: 哪里调用 就属于哪里 找线程体

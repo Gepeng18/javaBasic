@@ -1,4 +1,4 @@
-package jvm.测试类加载全过程;
+package jvm.classloader;
 
 /**
  * 测试类加载器的层次结构、双亲委托机制

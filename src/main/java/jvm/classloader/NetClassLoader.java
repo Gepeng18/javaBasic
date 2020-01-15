@@ -1,22 +1,22 @@
-package jvm.测试类加载全过程;
+package jvm.classloader;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 /**
- * 加载文件系统中加密后的class字节码的类加载器
+ * 网络类加载器
  * @author 尚学堂高淇 www.sxt.cn
  *
  */
-public class DecrptClassLoader  extends ClassLoader {
+public class NetClassLoader extends ClassLoader {
 	
-	//com.bjsxt.test.User   --> d:/myjava/  com/bjsxt/test/User.class      
-	private String rootDir;
+	//com.bjsxt.test.User   --> www.sxt.cn/myjava/  com/bjsxt/test/User.class      
+	private String rootUrl;
 	
-	public DecrptClassLoader(String rootDir){
-		this.rootDir = rootDir;
+	public NetClassLoader(String rootUrl){
+		this.rootUrl = rootUrl;
 	}
 	
 	@Override
@@ -53,19 +53,19 @@ public class DecrptClassLoader  extends ClassLoader {
 	}
 	
 	private byte[] getClassData(String classname){   //com.bjsxt.test.User   d:/myjava/  com/bjsxt/test/User.class
-		String path = rootDir +"/"+ classname.replace('.', '/')+".class";
+		String path = rootUrl +"/"+ classname.replace('.', '/')+".class";
 		
 //		IOUtils,可以使用它将流中的数据转成字节数组
 		InputStream is = null;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try{
-			is  = new FileInputStream(path);
+			URL url = new URL(path);
+			is  = url.openStream();
 			
-			
-			
-			int temp = -1;
-			while((temp=is.read())!=-1){
-				baos.write(temp^0xff);  //取反操作,相当于解密
+			byte[] buffer = new byte[1024];
+			int temp=0;
+			while((temp=is.read(buffer))!=-1){
+				baos.write(buffer, 0, temp);
 			}
 			
 			return baos.toByteArray();
@@ -90,6 +90,8 @@ public class DecrptClassLoader  extends ClassLoader {
 		}
 		
 	}
+	
+	
 	
 	
 }

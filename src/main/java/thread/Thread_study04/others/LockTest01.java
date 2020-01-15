@@ -1,4 +1,4 @@
-package com.sxt.others;
+package thread.Thread_study04.others;
 /**
  * 可重入锁: 锁可以延续使用
  * 

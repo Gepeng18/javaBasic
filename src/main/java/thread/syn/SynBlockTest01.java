@@ -1,4 +1,4 @@
-package com.sxt.syn;
+package thread.syn;
 /**
  * 线程安全: 在并发时保证数据的正确性、效率尽可能高
  * synchronized
