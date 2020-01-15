@@ -15,7 +15,7 @@ import jvm.TestReflection.bean.User;
  */
 public class Demo04 {
 	
-	public void test01(Map<String,User> map,List<User> list){
+	public void test01(Map<String,User> map,List<User> list,String a,int b){
 		System.out.println("Demo04.test01()");
 	}
 	
@@ -29,7 +29,7 @@ public class Demo04 {
 		try {
 			
 			//获得指定方法参数泛型信息
-			Method m = Demo04.class.getMethod("test01", Map.class,List.class);
+			Method m = Demo04.class.getMethod("test01", Map.class,List.class,String.class,int.class);
 			Type[] t = m.getGenericParameterTypes();
 			for (Type paramType : t) {
 				System.out.println("#"+paramType);

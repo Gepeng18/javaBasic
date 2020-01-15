@@ -15,11 +15,13 @@ import jvm.TestReflection.bean.User;
 public class Demo03 {
 	public static void main(String[] args) {
 
-		String path = "com.bjsxt.test.bean.User";
+		String path = "jvm.TestReflection.bean.User";
 		
 		try {
-			Class<User> clazz = (Class<User>) Class.forName(path);
-			
+//			Class<User> clazz = (Class<User>) Class.forName(path);
+		    Class<User> clazz = (Class<User>) Class.forName(path);
+
+
 			//通过反射API调用构造方法，构造对象
 			User u = clazz.newInstance();	//其实是调用了User的无参构造方法
 			System.out.println(u);

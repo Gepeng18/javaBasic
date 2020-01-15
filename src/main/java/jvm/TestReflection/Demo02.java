@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  */
 public class Demo02 {
 	public static void main(String[] args) {
-		String path = "com.bjsxt.test.bean.User";
+		String path = "jvm.TestReflection.bean.User";
 		
 		try {
 			Class clazz = Class.forName(path);

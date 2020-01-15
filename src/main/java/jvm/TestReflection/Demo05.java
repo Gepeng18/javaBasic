@@ -15,7 +15,7 @@ public class Demo05 {
 	public static void main(String[] args) {
 
 		try {
-			Class clazz = Class.forName("com.bjsxt.test.annotation.SxtStudent");
+			Class clazz = Class.forName("jvm.TestReflection.bean.User");
 			
 			//获得类的所有有效注解
 			Annotation[] annotations=clazz.getAnnotations();

@@ -9,7 +9,7 @@ package jvm.TestReflection;
 public class Demo01 {
 	
 	public static void main(String[] args) {
-		String path = "com.bjsxt.test.bean.User";
+		String path = "jvm.TestReflection.bean.User";
 		
 		try {
 			

@@ -34,7 +34,7 @@ public class Demo01 {
 		constructor.setBody("{this.empno=empno; this.ename=ename;}");
 		cc.addConstructor(constructor);
 		
-		cc.writeFile("c:/myjava"); //将上面构造好的类写入到c:/myjava中
+		cc.writeFile("F:\\test\\java"); //将上面构造好的类写入到c:/myjava中
 		System.out.println("生成类，成功！");
 	}
 }

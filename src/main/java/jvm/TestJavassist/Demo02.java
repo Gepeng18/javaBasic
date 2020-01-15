@@ -24,7 +24,7 @@ public class Demo02 {
 	 */
 	public static void test01() throws Exception{
 		ClassPool pool = ClassPool.getDefault();
-		CtClass cc = pool.get("com.bjsxt.test.Emp");
+		CtClass cc = pool.get("jvm.TestJavassist.Emp");
 		
 		byte[] bytes = cc.toBytecode();
 		System.out.println(Arrays.toString(bytes));
@@ -42,7 +42,7 @@ public class Demo02 {
 	 */
 	public static void test02() throws Exception{
 		ClassPool pool = ClassPool.getDefault();
-		CtClass cc = pool.get("com.bjsxt.test.Emp");
+		CtClass cc = pool.get("jvm.TestJavassist.Emp");
 		
 //		CtMethod m = CtNewMethod.make("public int add(int a,int b){return a+b;}", cc);
 		
@@ -67,7 +67,7 @@ public class Demo02 {
 	 */
 	public static void test03() throws Exception{
 		ClassPool pool = ClassPool.getDefault();
-		CtClass cc = pool.get("com.bjsxt.test.Emp");
+		CtClass cc = pool.get("jvm.TestJavassist.Emp");
 		
 		CtMethod cm = cc.getDeclaredMethod("sayHello",new CtClass[]{CtClass.intType});
 		cm.insertBefore("System.out.println($1);System.out.println(\"start!!!\");");
@@ -98,7 +98,7 @@ public class Demo02 {
 		
 		//增加相应的set和get方法
 		cc.addMethod(CtNewMethod.getter("getSalary", f1));;
-		cc.addMethod(CtNewMethod.getter("setSalary", f1));;
+		cc.addMethod(CtNewMethod.setter("setSalary", f1));;
 		
 	}
 	
@@ -108,7 +108,7 @@ public class Demo02 {
 	 */
 	public static void test05() throws Exception {
 		ClassPool pool = ClassPool.getDefault();
-		CtClass cc = pool.get("com.bjsxt.test.Emp");
+		CtClass cc = pool.get("jvm.TestJavassist.Emp");
 		
 		CtConstructor[] cs = cc.getConstructors();
 		for (CtConstructor c : cs) {
@@ -118,7 +118,7 @@ public class Demo02 {
 	
 	
 	public static void test06() throws Exception{
-		 CtClass cc = ClassPool.getDefault().get("com.bjsxt.test.Emp"); 
+		 CtClass cc = ClassPool.getDefault().get("jvm.TestJavassist.Emp");
 		 Object[] all = cc.getAnnotations();
 		 Author a = (Author)all[0]; 
 		 String name = a.name();
