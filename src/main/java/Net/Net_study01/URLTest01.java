@@ -1,4 +1,4 @@
-package Net.Net_study01.loc;
+package Net.Net_study01;
 
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -26,6 +26,7 @@ public class Chat {
 		DataInputStream dis =new DataInputStream(client.getInputStream());
 		String msg =dis.readUTF();
 		//4、返回消息
+		System.out.println(msg);
 		DataOutputStream dos =new DataOutputStream(client.getOutputStream());		
 		dos.writeUTF(msg);
 		//释放资源

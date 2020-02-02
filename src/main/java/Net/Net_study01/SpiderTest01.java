@@ -1,4 +1,4 @@
-package Net.Net_study01.loc;
+package Net.Net_study01;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
