@@ -14,7 +14,7 @@ public class LockTest03 {
 		lock.unlock();
 		System.out.println(lock.getHoldCount());
 	}
-	//不可重入
+
 	public void doSomething() throws InterruptedException {
 		lock.lock();
 		System.out.println(lock.getHoldCount());

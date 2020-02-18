@@ -153,8 +153,6 @@ public class myThreadPoolDemo {
 //        ExecutorService threadPool = Executors.newCachedThreadPool();
 
         try {
-
-
             for (int i = 1; i < 10; i++) {
                 threadPool.execute(() -> {
                     System.out.println(Thread.currentThread().getName() + "\t 办理业务");
