@@ -54,5 +54,4 @@ public class TableInfo {
 		this(tname,columns,null,priKeys);
 	}
 
-	
 }
