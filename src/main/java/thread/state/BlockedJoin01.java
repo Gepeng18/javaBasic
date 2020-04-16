@@ -1,4 +1,5 @@
-package thread.state.state;
+package thread.state;
+
 /**
  * join:合并线程，插队线程
  * 

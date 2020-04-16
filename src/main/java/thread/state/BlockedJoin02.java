@@ -1,4 +1,10 @@
 package com.sxt.state;
+
+import juc.lombokTest;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * join:合并线程，插队线程
  * 
@@ -44,5 +50,9 @@ class Son extends Thread{
 		}
 		System.out.println("赶紧买烟去。。。。");
 		System.out.println("手拿一包中华回家了。。。。");
+	}
+
+	public static void main(String[] args) {
+
 	}
 }

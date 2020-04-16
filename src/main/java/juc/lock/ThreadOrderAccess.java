@@ -111,21 +111,21 @@ public class ThreadOrderAccess {
                 }
             }, "C").start();
 
-            new Thread(() -> {
-                for (int i = 1; i <= 10; i++) {
-                    shareResource.print5();
-                }
-            }, "A").start();
-            new Thread(() -> {
-                for (int i = 1; i <= 10; i++) {
-                    shareResource.print10();
-                }
-            }, "B").start();
-            new Thread(() -> {
-                for (int i = 1; i <= 10; i++) {
-                    shareResource.print15();
-                }
-            }, "C").start();
+//            new Thread(() -> {
+//                for (int i = 1; i <= 10; i++) {
+//                    shareResource.print5();
+//                }
+//            }, "A").start();
+//            new Thread(() -> {
+//                for (int i = 1; i <= 10; i++) {
+//                    shareResource.print10();
+//                }
+//            }, "B").start();
+//            new Thread(() -> {
+//                for (int i = 1; i <= 10; i++) {
+//                    shareResource.print15();
+//                }
+//            }, "C").start();
         }
     }
 }
