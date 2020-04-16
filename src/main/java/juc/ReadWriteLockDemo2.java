@@ -23,10 +23,7 @@ class ReadWriteLock {
     //释放锁
     public synchronized void readUnlock() {
         readCount--;
-        if (readCount == 0) {
-            writeLocked = false;
-            notify();
-        }
+        notifyAll();
     }
 
     //使用锁
