@@ -30,7 +30,7 @@ public class FileServer {
 		System.out.println("一个客户端建立了连接");
 		// 3、操作: 文件拷贝 存储
 		InputStream is =new BufferedInputStream(client.getInputStream());
-		OutputStream os =new BufferedOutputStream(new FileOutputStream("src/tcp.png"));
+		OutputStream os =new BufferedOutputStream(new FileOutputStream("concurrencyTools/tcp.png"));
 		byte[] flush =new byte[1024];
 		int len = -1;
 		while((len=is.read(flush))!=-1) {

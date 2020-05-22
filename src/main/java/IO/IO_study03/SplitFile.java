@@ -131,7 +131,7 @@ public class SplitFile {
 		os.close();
 	}
 	public static void main(String[] args) throws IOException {
-		SplitFile sf = new SplitFile("src/com/sxt/io/SplitFile.java","dest") ;
+		SplitFile sf = new SplitFile("concurrencyTools/com/sxt/io/SplitFile.java","dest") ;
 		sf.split();
 		sf.merge("aaa.java");
 	}

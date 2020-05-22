@@ -1,11 +1,7 @@
 package Net.Net_study02.udp;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ObjectInputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.util.Date;
 
 /**
  * 文件存储: 接收端
@@ -36,7 +32,7 @@ public class UdpFileServer {
 		//                getLength​()
 		 byte[]  datas =packet.getData();
 		 int len = packet.getLength();		 
-		 IOUtils.byteArrayToFile(datas, "src/copy.png");		 
+		 IOUtils.byteArrayToFile(datas, "concurrencyTools/copy.png");
 		// 5、释放资源
 		 server.close();
 	}

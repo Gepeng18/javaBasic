@@ -13,7 +13,7 @@ public class RandTest01 {
 
 	public static void main(String[] args) throws IOException {
 		//分多少块
-		File src = new File("src/com/sxt/io/Copy.java");
+		File src = new File("concurrencyTools/com/sxt/io/Copy.java");
 		//总长度
 		long len = src.length();
 		//每块大小
@@ -46,7 +46,7 @@ public class RandTest01 {
 	 * @throws IOException
 	 */
 	public static void split(int i,int beginPos,int actualSize ) throws IOException {
-		RandomAccessFile raf =new RandomAccessFile(new File("src/com/sxt/io/Copy.java"),"r");
+		RandomAccessFile raf =new RandomAccessFile(new File("concurrencyTools/com/sxt/io/Copy.java"),"r");
 		//随机读取 
 		raf.seek(beginPos);
 		//读取
@@ -67,7 +67,7 @@ public class RandTest01 {
 	}
 	//分开思想: 起始、实际大小
 	public static void test2() throws IOException {
-		RandomAccessFile raf =new RandomAccessFile(new File("src/com/sxt/io/Copy.java"),"r");
+		RandomAccessFile raf =new RandomAccessFile(new File("concurrencyTools/com/sxt/io/Copy.java"),"r");
 		//起始位置
 		int beginPos =2+1026;
 		//实际大小
@@ -94,7 +94,7 @@ public class RandTest01 {
 	
 	//指定起始位置，读取剩余所有内容
 	public static void test1() throws IOException {
-		RandomAccessFile raf =new RandomAccessFile(new File("src/com/sxt/io/Copy.java"),"r");
+		RandomAccessFile raf =new RandomAccessFile(new File("concurrencyTools/com/sxt/io/Copy.java"),"r");
 		//随机读取 
 		raf.seek(2);
 		//读取

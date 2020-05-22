@@ -16,7 +16,7 @@ import java.io.OutputStream;
 public class Copy {
 
     public static void main(String[] args) {
-        copy("src/com/sxt/io/Copy.java", "copy.txt");
+        copy("concurrencyTools/com/sxt/io/Copy.java", "copy.txt");
     }
 
     /**

@@ -21,7 +21,7 @@ public class UdpFileClient {
 		 // 1、使用DatagramSocket  指定端口 创建发送端
 		DatagramSocket client =new DatagramSocket(8888);
 		 //2、准备数据 一定转成字节数组
-		byte[] datas =IOUtils.fileToByteArray("src/logo.png");		
+		byte[] datas =IOUtils.fileToByteArray("concurrencyTools/logo.png");
 		 //3、 封装成DatagramPacket 包裹，需要指定目的地
 		DatagramPacket packet =new DatagramPacket(datas,0,datas.length,
 				new InetSocketAddress("localhost",6666));

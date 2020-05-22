@@ -2,7 +2,6 @@ package Net.Net_study02.tcp;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +25,7 @@ public class FileClient {
 		//1、建立连接: 使用Socket创建客户端 +服务的地址和端口
 		Socket client =new Socket("localhost",8888);
 		//2、操作: 拷贝 上传
-		InputStream is =new BufferedInputStream(new FileInputStream("src/ndl.png"));
+		InputStream is =new BufferedInputStream(new FileInputStream("concurrencyTools/ndl.png"));
 		OutputStream os =new BufferedOutputStream(client.getOutputStream());
 		byte[] flush =new byte[1024];
 		int len = -1;
