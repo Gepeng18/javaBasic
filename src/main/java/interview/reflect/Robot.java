@@ -5,6 +5,9 @@ public class Robot {
     public void sayHi(String helloSentence){
         System.out.println(helloSentence + " " + name);
     }
+    private void printName(){
+        System.out.println("you are handsome, " + name);
+    }
     private String throwHello(String tag){
         return "Hello " + tag;
     }

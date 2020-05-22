@@ -1,7 +1,7 @@
 package concurrencyTools.imooccache;
 
-import imooccache.computable.Computable;
-import imooccache.computable.ExpensiveFunction;
+import concurrencyTools.imooccache.computable.Computable;
+import concurrencyTools.imooccache.computable.ExpensiveFunction;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,6 +1,6 @@
 package concurrencyTools.imooccache;
 
-import imooccache.computable.ExpensiveFunction;
+import concurrencyTools.imooccache.computable.ExpensiveFunction;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;

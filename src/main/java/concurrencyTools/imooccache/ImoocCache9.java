@@ -1,8 +1,8 @@
 package concurrencyTools.imooccache;
 
-import imooccache.computable.Computable;
-import imooccache.computable.ExpensiveFunction;
-import imooccache.computable.MayFail;
+import concurrencyTools.imooccache.computable.Computable;
+import concurrencyTools.imooccache.computable.ExpensiveFunction;
+import concurrencyTools.imooccache.computable.MayFail;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
