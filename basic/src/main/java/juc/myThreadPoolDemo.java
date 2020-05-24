@@ -26,60 +26,60 @@ import java.util.concurrent.*;
  *          1.AbortPolicy（默认）：直接抛出RejectedExecutionException异常阻止系统正常运行
  *
  *          D:\develop\Java\jdk1.8.0_131\bin\java.exe -Dvisualvm.id=247116125974600 "-javaagent:E:\IntelliJ IDEA 2018.3.6\lib\idea_rt.jar=52080:E:\IntelliJ IDEA 2018.3.6\bin" -Dfile.encoding=UTF-8 -classpath D:\develop\Java\jdk1.8.0_131\jre\lib\charsets.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\deploy.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\javaws.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jce.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfr.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jsse.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\management-agent.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\plugin.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\resources.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\rt.jar;E:\IdeaWorkSpace\practice\out\production\practice com.atguigu.Interview.study.threadPool.myThreadPoolDemo
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-3	 办理业务
- *              pool-1-thread-4	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-3	 办理业务
+ *              pool-1-java300.thread-4	 办理业务
  *              java.util.concurrent.RejectedExecutionException: Task com.atguigu.Interview.study.threadPool.myThreadPoolDemo$$Lambda$1/4952965@19a45b3 rejected from java.util.concurrent.ThreadPoolExecutor@99a589[Running, pool size = 5, active threads = 4, queued tasks = 0, completed tasks = 4]
  *              	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
  *              	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
  *              	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
  *              	at com.atguigu.Interview.study.threadPool.myThreadPoolDemo.main(myThreadPoolDemo.java:64)
- *              pool-1-thread-5	 办理业务
+ *              pool-1-java300.thread-5	 办理业务
  *
  *          2.CallerRunsPolicy :  "调用者运行"一种调节机制，该策略既不会抛弃任务，也不会抛出异常，而是将某些任务回退给调用者
  *
  *          //D:\develop\Java\jdk1.8.0_131\bin\java.exe -Dvisualvm.id=247004985321500 "-javaagent:E:\IntelliJ IDEA 2018.3.6\lib\idea_rt.jar=52067:E:\IntelliJ IDEA 2018.3.6\bin" -Dfile.encoding=UTF-8 -classpath D:\develop\Java\jdk1.8.0_131\jre\lib\charsets.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\deploy.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\javaws.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jce.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfr.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jsse.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\management-agent.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\plugin.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\resources.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\rt.jar;E:\IdeaWorkSpace\practice\out\production\practice com.atguigu.Interview.study.threadPool.myThreadPoolDemo
- *              pool-1-thread-1	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
  *              main	 办理业务
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-4	 办理业务
- *              pool-1-thread-3	 办理业务
- *              pool-1-thread-5	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-4	 办理业务
+ *              pool-1-java300.thread-3	 办理业务
+ *              pool-1-java300.thread-5	 办理业务
  *
  *
  *           3.DiscardOldestPolicy: 抛弃队列中等待最久的任务，然后把当前任务加入队列中尝试再次提交当前任务
  *
  *           D:\develop\Java\jdk1.8.0_131\bin\java.exe -Dvisualvm.id=247531194301700 "-javaagent:E:\IntelliJ IDEA 2018.3.6\lib\idea_rt.jar=52205:E:\IntelliJ IDEA 2018.3.6\bin" -Dfile.encoding=UTF-8 -classpath D:\develop\Java\jdk1.8.0_131\jre\lib\charsets.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\deploy.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\javaws.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jce.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfr.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jsse.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\management-agent.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\plugin.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\resources.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\rt.jar;E:\IdeaWorkSpace\practice\out\production\practice com.atguigu.Interview.study.threadPool.myThreadPoolDemo
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-3	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-5	 办理业务
- *              pool-1-thread-4	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-3	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-5	 办理业务
+ *              pool-1-java300.thread-4	 办理业务
  *
  *              Process finished with exit code 0
  *
  *             4. DiscardPolicy: 直接丢弃任务，不予任何处理也不抛出异常。如果允许任务丢失，这是一种最好的方案
  *
  *              D:\develop\Java\jdk1.8.0_131\bin\java.exe -Dvisualvm.id=247733190169800 "-javaagent:E:\IntelliJ IDEA 2018.3.6\lib\idea_rt.jar=52229:E:\IntelliJ IDEA 2018.3.6\bin" -Dfile.encoding=UTF-8 -classpath D:\develop\Java\jdk1.8.0_131\jre\lib\charsets.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\deploy.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\javaws.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jce.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfr.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\jsse.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\management-agent.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\plugin.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\resources.jar;D:\develop\Java\jdk1.8.0_131\jre\lib\rt.jar;E:\IdeaWorkSpace\practice\out\production\practice com.atguigu.Interview.study.threadPool.myThreadPoolDemo
- *              pool-1-thread-1	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-2	 办理业务
- *              pool-1-thread-3	 办理业务
- *              pool-1-thread-4	 办理业务
- *              pool-1-thread-5	 办理业务
+ *              pool-1-java300.thread-1	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-2	 办理业务
+ *              pool-1-java300.thread-3	 办理业务
+ *              pool-1-java300.thread-4	 办理业务
+ *              pool-1-java300.thread-5	 办理业务
  *
  *              Process finished with exit code 0
  *
