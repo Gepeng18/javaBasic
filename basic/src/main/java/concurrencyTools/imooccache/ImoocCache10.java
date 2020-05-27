@@ -42,6 +42,7 @@ public class ImoocCache10<A, V> implements Computable<A, V> {
                 if (f == null) {
                     f = ft;
                     System.out.println("从FutureTask调用了计算函数");
+                    System.out.println(Thread.currentThread().getName());
                     ft.run();
                 }
             }
@@ -66,11 +67,11 @@ public class ImoocCache10<A, V> implements Computable<A, V> {
         return compute(arg, randomExpire);
     }
 
-    public final static ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
+    public final static ScheduledExecutorService EXECUTOR = Executors.newScheduledThreadPool(5);
 
     public V compute(A arg, long expire) throws ExecutionException, InterruptedException {
         if (expire>0) {
-            executor.schedule(new Runnable() {
+            EXECUTOR.schedule(new Runnable() {
                 @Override
                 public void run() {
                     expire(arg);

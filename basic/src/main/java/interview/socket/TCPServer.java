@@ -1,7 +1,5 @@
 package interview.socket;
 
-import com.interview.javabasic.thread.MyThread;
-
 import java.net.ServerSocket;
 import java.net.Socket;
 
